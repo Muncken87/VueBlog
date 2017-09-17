@@ -2,7 +2,7 @@
   <nav>
     <div class="container flex">
     <li><router-link to="/about">About</router-link></li>
-      <li><router-link to="/posts">Posts</router-link></li>
+    <li><router-link to="/posts">Posts</router-link></li>
     </div>
   </nav>
 </template>

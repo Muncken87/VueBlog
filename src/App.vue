@@ -45,6 +45,10 @@ export default {
 #app
   transition: all 0.2s ease
 
+img
+  height: auto
+  max-width: 100%
+
 *
   box-sizing: border-box
 

@@ -1,17 +1,10 @@
 <template>
   <section class="post-list">
     <div v-for="(post, index) in posts">
-      <div class="box" @click="showTitle(post)">
-        <p>{{post.date}}</p>
-        <h4>{{post.title}}</h4>
-        <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + post.image + ")", }'>
-        </div>
-        <div class="clear"></div>
-        <!-- <span @click="removePost(post)">X</span> -->
-      </div>
+      <app-post-list :post="post"></app-post-list>
     </div>
     <div class="clear"></div>
-    <form id="form" v-on:submit.prevent="addPost" v-if="hidden">
+    <!-- <form id="form" v-on:submit.prevent="addPost" v-if="hidden">
       <div class="row">
         <div class="four columns">
           <label for="postTitle">Title</label>
@@ -35,13 +28,14 @@
         <div class="one column">
           <input type="submit" class="button-primary" value="Add Post">
         </div>
-      </div> <!-- end row -->
+      </div>
     </form>
-    <input type="submit" class="hide" value="Hide Form" @click="hidden = !hidden">
+    <input type="submit" class="hide" value="Hide Form" @click="hidden = !hidden"> -->
   </section>
 </template>
 
 <script>
+import PostListComponent from '@/components/PostListComponent'
 import Firebase from 'firebase'
 let config = {
     apiKey: "AIzaSyBKWiS0-Wu0HpPvu1DXxlCvlsUtcbPpCjI",
@@ -57,7 +51,10 @@ let db = app.database()
 let postsRef = db.ref('posts')
 
 export default {
-  name: 'post-list',
+  name: 'home',
+  components: {
+    appPostList: PostListComponent
+  },
   firebase: {
     posts: postsRef
   },
@@ -67,9 +64,11 @@ export default {
         date: '',
         image: 'http://',
         title: '',
-        text: ''
+        text: '',
+        id: ''
       },
-      hidden: false
+      hidden: false,
+      selected: []
     }
   },
   methods: {
@@ -79,108 +78,20 @@ export default {
      this.newPost.date = '';
      this.newPost.image = 'http://';
      this.newPost.text = '';
+     this.newPost.id = '';
      this.seen = false;
    },
    removePost: function (post) {
       postsRef.child(post['.key']).remove()
-   },
-   showTitle: function(text) {
-     console.log(text.title);
    }
-  }
+ }
 }
 </script>
 
 <style lang="sass" scoped>
 .post-list
   transition: left 0.2s ease
-  .box
-    display: block
-    float: left
-    width: calc(25% - 20px)
-    margin: 10px
-    position: relative
-    border: 1px solid black
-    background-color: #333
-    height: 60px
-    transition: all 0.2s cubic-bezier(0.55, 0.09, 0, 1.07)
-
-    &:hover
-      background-color: rgba(51, 125, 163, 0.79)
-      cursor: pointer
-
-    @media(max-width: 1200px)
-      width: 100%
-      margin: 0
-      margin-bottom: 20px
-
-    .bg-image
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
-      background-position: 0% 39%
-      background-size: cover
-      opacity: 0.7
-
-    span
-      color: red
-      font-size: 14px
-      position: relative
-      background-color: white
-      padding: 5px
-
-    p
-      font-family: hooge
-      font-size: 8px
-      color: white
-      // -webkit-text-stroke: 1px black
-      -webkit-font-smoothing: none
-      letter-spacing: 0.05em
-      margin: 0
-      position: absolute
-      z-index: 9999
-      left: 8%
-      top: 30%
-      text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
-
-    h4
-      font-family: hooge
-      font-size: 16px
-      color: white
-      // -webkit-text-stroke: 1px black
-      -webkit-font-smoothing: none
-      letter-spacing: 0.05em
-      margin: 0
-      position: absolute
-      z-index: 9999
-      left: 8%
-      top: 50%
-      text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
-  .clear
-    &:after,&:before
-      clear:  both
-      content: ''
-      display: table
-
-  #form
-    margin-top: 3em
-
-    label
-      text-align: left
-      font-size: 2em
-
-    textarea
-      min-height: 200px
-      max-width: 100%
-
-    input
-      height: 38px
-
-    .button-primary
-      font-size: 11px
-      margin-top: 20px
+  
 
 .hide
   font-size: 8px
