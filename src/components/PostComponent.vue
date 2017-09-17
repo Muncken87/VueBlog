@@ -91,7 +91,7 @@ export default {
 <style lang="sass" scoped>
 .post-list
   transition: left 0.2s ease
-  
+
 
 .hide
   font-size: 8px

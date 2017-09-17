@@ -7,6 +7,7 @@ require('../node_modules/skeleton-framework/dist/skeleton.min.css')
 import VueFire from 'vuefire'
 import AboutComponent from './components/AboutComponent.vue'
 
+
 Vue.use(VueFire)
 
 Vue.config.productionTip = false

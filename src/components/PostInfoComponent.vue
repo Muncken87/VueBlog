@@ -6,7 +6,14 @@
 
 <script>
 export default {
-  name: 'post-info'
+  name: 'post-info',
+  data () {
+    return {
+  }
+},
+created: {
+  //  return firebase.database().ref('/movies').once('value');
+}
 }
 </script>
 

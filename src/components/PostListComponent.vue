@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="'/post/'+ post.id">
+    <router-link :to="postDetail">
       <div class="box">
         <p>{{post.date}}</p>
         <h4>{{post.title}}</h4>
@@ -16,14 +16,19 @@
 <script>
 export default {
   name: 'post-list',
-  props: ['post'],
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
     data () {
       return {
     }
   },
   computed: {
-    postLink(){
-      return '/post/5'
+    postDetail(){
+        return '/post/${this.post.id}'
     }
   }
 }
