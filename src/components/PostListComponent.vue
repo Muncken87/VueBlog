@@ -1,16 +1,16 @@
 <template>
   <div>
-    <router-link :to="postDetail">
+    <router-link :to="'/post/'+ post['.key']">
       <div class="box">
         <p>{{post.date}}</p>
         <h4>{{post.title}}</h4>
-        <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + post.image + ")", }'>
-        </div>
+        <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + post.image + ")", }'></div>
+        <!-- <span  @click="removePost(post)">X</span> -->
         <div class="clear"></div>
-        <!-- <span @click="removePost(post)">X</span> -->
       </div>
     </router-link>
   </div>
+
 </template>
 
 <script>
@@ -24,11 +24,20 @@ export default {
   },
     data () {
       return {
+        selected: []
     }
   },
   computed: {
     postDetail(){
+        console.log(this.post.id);
+        db.ref()
         return '/post/${this.post.id}'
+
+    }
+  },
+  methods:{
+    selectedPost(post){
+      this.selected = post;
     }
   }
 }
@@ -122,4 +131,7 @@ export default {
   .button-primary
     font-size: 11px
     margin-top: 20px
+
+.border
+  border: 5px solid red
 </style>

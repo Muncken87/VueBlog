@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>alex-vue-blog</title>
+    <!-- Firebase -->
+    <script src="https://gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <!-- VueFire -->
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script>
+      let config = {
+      apiKey: "AIzaSyBKWiS0-Wu0HpPvu1DXxlCvlsUtcbPpCjI",
+      authDomain: "vue-blog-9e475.firebaseapp.com",
+      databaseURL: "https://vue-blog-9e475.firebaseio.com",
+      projectId: "vue-blog-9e475",
+      storageBucket: "vue-blog-9e475.appspot.com",
+      messagingSenderId: "467045898200"
+      };
+
+      let app = firebase.initializeApp(config)
+      let db = app.database()
+      let postsRef = db.ref('posts')
+    </script>
   </head>
   <body>
     <div id="app"></div>

@@ -3,6 +3,7 @@
     <div v-for="(post, index) in posts">
       <app-post-list :post="post"></app-post-list>
     </div>
+    
     <div class="clear"></div>
     <!-- <form id="form" v-on:submit.prevent="addPost" v-if="hidden">
       <div class="row">
@@ -36,20 +37,6 @@
 
 <script>
 import PostListComponent from '@/components/PostListComponent'
-import Firebase from 'firebase'
-let config = {
-    apiKey: "AIzaSyBKWiS0-Wu0HpPvu1DXxlCvlsUtcbPpCjI",
-    authDomain: "vue-blog-9e475.firebaseapp.com",
-    databaseURL: "https://vue-blog-9e475.firebaseio.com",
-    projectId: "vue-blog-9e475",
-    storageBucket: "vue-blog-9e475.appspot.com",
-    messagingSenderId: "467045898200"
-};
-
-let app = Firebase.initializeApp(config)
-let db = app.database()
-let postsRef = db.ref('posts')
-
 export default {
   name: 'home',
   components: {
@@ -84,6 +71,9 @@ export default {
    removePost: function (post) {
       postsRef.child(post['.key']).remove()
    }
+ },
+ created(){
+   console.log(this.firebase);
  }
 }
 </script>

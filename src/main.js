@@ -4,8 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 require('../node_modules/skeleton-framework/dist/skeleton.min.css')
-import VueFire from 'vuefire'
+// import VueFire from 'vuefire'
+// import Firebase from 'firebase'
 import AboutComponent from './components/AboutComponent.vue'
+import PostComponent from '@/components/PostComponent.vue'
+
+
 
 
 Vue.use(VueFire)

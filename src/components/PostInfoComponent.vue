@@ -1,18 +1,27 @@
 <template>
   <div>
-    <h2>Hello Post {{$route.params.id}}</h2>
+    <h3>Hello Post {{$route.params.id}} | {{title}} | {{date}}</h3>
+    <img v-bind:src="image"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'post-info',
+  name: 'post-info-component',
   data () {
     return {
+      title: '',
+      date: ''
   }
 },
-created: {
-  //  return firebase.database().ref('/movies').once('value');
+created() {
+     let self = this;
+     var a = firebase.database().ref('/posts/' + this.$route.params.id).once('value')
+     .then (function(item){
+       console.log(item.val());
+       self.title = item.val().title;
+     })
+     console.log(this.$route.params.id);
 }
 }
 </script>
