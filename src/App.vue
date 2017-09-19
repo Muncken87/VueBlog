@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-bind:class="{ active: seen }">
     <!-- <router-view></router-view> -->
-    <app-nav></app-nav>
+    <app-nav v-bind:class="{ active: seen }"></app-nav>
     <app-sidebar v-bind:class="{ move: seen }"></app-sidebar>
     <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
       <span>-</span>
@@ -9,7 +9,7 @@
       <span>-</span>
     </p>
     <div class="container text-center">
-      <h2>A dead simple, responsive boilerplate.</h2>
+      <!-- <h2>A dead simple, responsive boilerplate.</h2> -->
       <router-view></router-view>
     </div>
   </div>

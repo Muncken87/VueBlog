@@ -1,38 +1,40 @@
 <template>
-  <section class="post-list">
-    <div v-for="(post, index) in posts">
-      <app-post-list :post="post"></app-post-list>
-    </div>
-    
-    <div class="clear"></div>
-    <!-- <form id="form" v-on:submit.prevent="addPost" v-if="hidden">
-      <div class="row">
-        <div class="four columns">
-          <label for="postTitle">Title</label>
-          <input type="text" class="u-full-width" id="postTitle" v-model="newPost.title">
-        </div>
-        <div class="four columns">
-          <label for="postDate">Date</label>
-          <input type="text" class="u-full-width" id="postDate" v-model="newPost.date">
-        </div>
-
-        <div class="four columns">
-          <label for="postImage">Image Url</label>
-          <input type="text" class="u-full-width" id="postImage" v-model="newPost.image">
-        </div>
-
-        <div class="twelve columns">
-          <label for="postImage">Text</label>
-          <textarea type="text" class="u-full-width" id="postText" v-model="newPost.text"></textarea>
-        </div>
-
-        <div class="one column">
-          <input type="submit" class="button-primary" value="Add Post">
-        </div>
+  <div class="post-list">
+    <h2>A dead simple, responsive boilerplate.</h2>
+    <section>
+      <div v-for="(post, index) in posts">
+        <app-post-list :post="post"></app-post-list>
       </div>
+      <div class="clear"></div>
+    <!-- <form id="form" v-on:submit.prevent="addPost" v-if="hidden">
+    <div class="row">
+    <div class="four columns">
+    <label for="postTitle">Title</label>
+    <input type="text" class="u-full-width" id="postTitle" v-model="newPost.title">
+    </div>
+    <div class="four columns">
+    <label for="postDate">Date</label>
+    <input type="text" class="u-full-width" id="postDate" v-model="newPost.date">
+    </div>
+
+    <div class="four columns">
+    <label for="postImage">Image Url</label>
+    <input type="text" class="u-full-width" id="postImage" v-model="newPost.image">
+    </div>
+
+    <div class="twelve columns">
+    <label for="postImage">Text</label>
+    <textarea type="text" class="u-full-width" id="postText" v-model="newPost.text"></textarea>
+    </div>
+
+    <div class="one column">
+    <input type="submit" class="button-primary" value="Add Post">
+    </div>
+    </div>
     </form>
     <input type="submit" class="hide" value="Hide Form" @click="hidden = !hidden"> -->
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
