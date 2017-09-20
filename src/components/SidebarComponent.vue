@@ -1,14 +1,17 @@
 <template>
   <nav class="sidebar">
-    <h2>Sidebar</h2>
+    <app-nav></app-nav>
   </nav>
 </template>
 
 <script>
 
-
+import NavComponent from '@/components/NavComponent'
 export default {
   props: ['seen'],
+  components: {
+    appNav: NavComponent
+  },
   data () {
     return {
     }
@@ -23,9 +26,8 @@ export default {
   top: 0
   height: 100vh
   width: 250px
-  background-color: #ccc
+  background-color: #fff
   transition: left 0.2s ease
-  padding: 25px
 
   p
     position: absolute
@@ -33,8 +35,10 @@ export default {
   h2
     font-weight: 100
     margin: 0
+    margin-top: 1em
 
 .move
   left: 0
+
 
 </style>

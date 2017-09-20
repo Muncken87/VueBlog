@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link :to="'/post/'+ post['.key']">
-      <div class="box">
+      <div class="box" v-cloak>
         <p>{{post.date}}</p>
         <h4>{{post.title}}</h4>
         <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + post.image + ")", }'></div>
@@ -132,6 +132,7 @@ export default {
     font-size: 11px
     margin-top: 20px
 
-.border
-  border: 5px solid red
+[v-cloak]
+  display: none
+
 </style>

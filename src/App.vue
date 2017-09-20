@@ -1,7 +1,6 @@
 <template>
   <div id="app" v-bind:class="{ active: seen }">
     <!-- <router-view></router-view> -->
-    <app-nav v-bind:class="{ active: seen }"></app-nav>
     <app-sidebar v-bind:class="{ move: seen }"></app-sidebar>
     <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
       <span>-</span>
@@ -17,13 +16,11 @@
 
 <script>
 
-import NavComponent from './components/NavComponent'
 import PostComponent from './components/PostComponent'
 import SidebarComponent from './components/SidebarComponent'
 
 export default {
   components: {
-    appNav: NavComponent,
     appPostList: PostComponent,
     appSidebar: SidebarComponent
   },
@@ -65,7 +62,7 @@ body
 
     h2
       font-weight: 100
-      margin: 5em 0em
+      margin: 5em 0 2.5em 0
 .click
   position: absolute
   background-color: white
@@ -85,4 +82,5 @@ body
 .active
   padding-left: 250px
   transition: all 0.2s ease
+  overflow: hidden
 </style>

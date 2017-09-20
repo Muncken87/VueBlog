@@ -1,9 +1,7 @@
 <template>
   <nav>
-    <div class="container flex">
     <li><router-link to="/about">About</router-link></li>
     <li><router-link to="/posts">Posts</router-link></li>
-    </div>
   </nav>
 </template>
 
@@ -15,28 +13,18 @@ export default {
 
 <style lang="sass" scoped>
 nav
-  width: 100%
-  position: fixed
-  left: 0
-  top: 0
-  background-color: white
-  padding: 2em 0em
-
-  .flex
-    display: flex
-    align-items: center
-    justify-content: center
-
-    li
+  margin-top: 2em
+  top: 50%
+  position: relative
+  transform: translate(0%, -50%)
+  li
+    list-style-type: none
+    background-color: black
+    a
+      text-decoration: none
+      font-size: 14px
       color: white
-      list-style-type: none
-      margin: 0 0 0 2em
-      line-height: 1.3
-      font: 100 2em/1 'Raleway'
-
-    h3
-      color: black
-      font-weight: bold
-      letter-spacing: 0.15em
+      padding: 1em 2em
+      display: block
 
 </style>

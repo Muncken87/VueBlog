@@ -4,17 +4,6 @@
     <h2 class="post-detail-title">{{title}}</h2>
     <p class="post-detail-date">{{date}}</p>
     <p class="post-detail-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <code>
-      export default {
-        name: 'post-info-component',
-        data () {
-          return {
-            title: '',
-            date: '',
-            image: ''
-        }
-      }
-    </code>
   </div>
 </template>
 
@@ -58,7 +47,7 @@ created() {
     margin: 1em 0 0 0
 
   .bg-image
-    margin-top: 150px
+    margin-top: 100px
     max-width: 100%
     height: 100%
     background-position: center center
@@ -69,5 +58,6 @@ created() {
     font-size: 14px
     text-align: left
     margin: 2em 0em
-    line-height: 1.7em
+    line-height: 1.5em
+    padding: 0 0.5em
 </style>
