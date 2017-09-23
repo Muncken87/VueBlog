@@ -1,6 +1,9 @@
 <template>
   <div class="post-list">
-    <h2>A dead simple, responsive boilerplate.</h2>
+    <header>
+      <h2>Alexander Munck</h2>
+      <p>Front-end developer / Freelancer</p>
+    </header>
     <section>
       <div v-for="(post, index) in posts">
         <app-post-list :post="post"></app-post-list>
@@ -75,15 +78,30 @@ export default {
    }
  },
  created(){
-   console.log(this.firebase);
+  //  console.log(this.firebase);
  }
 }
 </script>
 
 <style lang="sass" scoped>
+
 .post-list
   transition: left 0.2s ease
 
+  header
+    width: 100%
+    margin-left: 10px
+    margin-bottom: 4em
+    h2
+      font-weight: bold
+      margin: 5em 0 0em 0
+      font-size: 36px
+
+    p
+      font-weight: 100
+      font-size: 20px
+      color: #aaa
+      margin-top: 10px
 
 .hide
   font-size: 8px

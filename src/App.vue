@@ -1,14 +1,13 @@
 <template>
   <div id="app" v-bind:class="{ active: seen }">
-    <!-- <router-view></router-view> -->
-    <app-sidebar v-bind:class="{ move: seen }"></app-sidebar>
-    <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
+    <!-- <app-sidebar v-bind:class="{ move: seen }"></app-sidebar> -->
+    <!-- <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
       <span>-</span>
       <span>-</span>
       <span>-</span>
-    </p>
+    </p> -->
+    <app-nav></app-nav>
     <div class="container text-center">
-      <!-- <h2>A dead simple, responsive boilerplate.</h2> -->
       <router-view></router-view>
     </div>
   </div>
@@ -16,18 +15,27 @@
 
 <script>
 
-import PostComponent from './components/PostComponent'
-import SidebarComponent from './components/SidebarComponent'
+// import PostComponent from './components/PostComponent'
+// // import SidebarComponent from './components/SidebarComponent'
+import NavComponent from './components/NavComponent'
 
 export default {
   components: {
-    appPostList: PostComponent,
-    appSidebar: SidebarComponent
+    appNav: NavComponent
   },
   data () {
     return {
       seen: false
     }
+  },
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
+      this.$router.push('/success')
+    } else {
+      this.$router.push('/auth')
+    }
+   });
   }
 }
 </script>
@@ -41,6 +49,9 @@ export default {
   font-style: normal
 #app
   transition: all 0.2s ease
+
+.container
+  max-width: 700px !important
 
 img
   height: auto
@@ -56,13 +67,12 @@ body
   padding: 0
   font-family: 'Raleway', sans-serif
   font-size: 62.5%
+  background-image: url("./assets/pattern.png")
+  background-size: 15px
 
   .text-center
     text-align: center
 
-    h2
-      font-weight: 100
-      margin: 5em 0 2.5em 0
 .click
   position: absolute
   background-color: white

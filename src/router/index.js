@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import AboutComponent from '@/components/AboutComponent.vue'
 import PostComponent from '@/components/PostComponent'
 import PostListComponent from '@/components/PostListComponent'
 import PostInfoComponent from '@/components/PostInfoComponent'
+import Auth from '@/components/Auth.vue'
+import AuthSuccess from '@/components/AuthSuccess'
 
 
 Vue.use(Router)
@@ -11,8 +14,16 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/auth',
+      component: Auth
+    },
+    {
+      path: '/success',
+      component: AuthSuccess
+    },
+    {
       path: '/',
-      component: PostListComponent
+      component: PostComponent
     },
     {
       path: '/about',

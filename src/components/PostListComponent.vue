@@ -10,9 +10,7 @@
       </div>
     </router-link>
   </div>
-
 </template>
-
 <script>
 export default {
   name: 'post-list',
@@ -47,22 +45,27 @@ export default {
 .box
   display: block
   float: left
-  width: calc(25% - 20px)
+  width: 100%
   margin: 10px
   position: relative
   border: 1px solid black
   background-color: #333
   height: 60px
-  transition: all 0.2s cubic-bezier(0.55, 0.09, 0, 1.07)
 
   &:hover
     background-color: rgba(51, 125, 163, 0.79)
     cursor: pointer
 
-  @media(max-width: 1200px)
+  @media(max-width: 1000px)
+    width: calc(50% - 20px)
+    margin: 10px
+
+
+  @media(max-width: 450px)
     width: 100%
-    margin: 0
-    margin-bottom: 20px
+    margin: 0 0 5px 0
+    &:hover
+      height: 100px
 
   .bg-image
     position: absolute
