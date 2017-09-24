@@ -46,7 +46,7 @@ import PostListComponent from '@/components/PostListComponent'
 export default {
   name: 'home',
   firebase: {
-    posts: postsRef
+
   },
   components: {
     appPostList: PostListComponent
@@ -60,6 +60,7 @@ export default {
         text: '',
         id: ''
       },
+      posts: [],
       hidden: false,
       selected: [],
     }

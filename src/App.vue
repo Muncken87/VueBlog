@@ -17,7 +17,10 @@
 
 // import PostComponent from './components/PostComponent'
 // // import SidebarComponent from './components/SidebarComponent'
+import firebase from 'firebase'
 import NavComponent from './components/NavComponent'
+
+
 export default {
   components: {
     appNav: NavComponent
@@ -28,6 +31,7 @@ export default {
     }
   },
   created() {
+    firebase.initializeApp(config).database().ref('posts');
     firebase.auth().onAuthStateChanged((user) => {
     if(user) {
       this.$router.push('/success')

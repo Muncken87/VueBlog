@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <title>alex-vue-blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Firebase -->
-    <script src="https://gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
     <!-- VueFire -->
     <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
@@ -19,9 +18,9 @@
       messagingSenderId: "467045898200"
       };
 
-      let app = firebase.initializeApp(config)
-      let db = app.database()
-      let postsRef = db.ref('posts')
+      let postsRef = [];
+   //let postsRef = firebase.initializeApp(config).database().ref('posts');
+
     </script>
   </head>
   <body>
