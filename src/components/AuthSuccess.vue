@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Signup succeeded</h1>
+    <h1>Signin succeeded</h1>
     <button @click="logOut">Log out</button>
     <hr>
     <img :src="photo" style="height: 120px"> <br>

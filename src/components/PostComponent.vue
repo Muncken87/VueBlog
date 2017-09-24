@@ -42,13 +42,13 @@
 
 <script>
 import PostListComponent from '@/components/PostListComponent'
+import Firebase from 'firebase'
+let db = app.database()
+let postsRef = db.ref('posts')
 export default {
   name: 'home',
   components: {
     appPostList: PostListComponent
-  },
-  firebase: {
-    posts: postsRef
   },
   data () {
     return {
@@ -60,7 +60,8 @@ export default {
         id: ''
       },
       hidden: false,
-      selected: []
+      selected: [],
+      posts: postsRef
     }
   },
   methods: {
