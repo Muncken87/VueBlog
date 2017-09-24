@@ -20,6 +20,8 @@
       };
 
       let app = firebase.initializeApp(config)
+      let db = app.database()
+      let postsRef = db.ref('posts')
     </script>
   </head>
   <body>

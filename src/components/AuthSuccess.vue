@@ -30,7 +30,6 @@ export default {
     this.photo = this.user.photoURL;
     this.userId = this.user.uid;
   }
-  console.log(this.user);
 },
 methods: {
   logOut() {
