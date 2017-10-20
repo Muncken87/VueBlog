@@ -35,31 +35,40 @@ created() {
 .post-detail-container
   line-height: 1.4
   .post-detail-title
-    margin: 5em 0 0 0
-    font-weight: 300
+    margin: 2em 0 0 0
+    font-weight: 400
     font-size: 36px
+    text-align: left
 
   .post-detail-date
     margin: 20px 0px
-    color: #b2b9be
+    color: #000
     font-size: 13px
     text-transform: uppercase
     letter-spacing: 2px
+    text-align: left
 
   .bg-image
     max-width: 100%
     height: 100%
     background-position: center center
     background-size: cover
-    height: 320px
+    height: 565px
     margin-top: 5em
+    @media(max-width: 865px)
+      height: 266px
 
   .post-detail-body
-    font-size: 16px
+    font-size: 1.06667rem
     text-align: left
-    margin: 2em 0em
-    line-height: 1.7
+    line-height: 1.875
     padding: 0 0.5em
     -webkit-font-smoothing: antialiased
     color: #666
+    max-width: 750px
+    margin: 2em auto
+    word-break: normal
+    word-wrap: break-word
+    overflow-wrap: break-word
+    line-break: strict
 </style>

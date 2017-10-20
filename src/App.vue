@@ -51,7 +51,10 @@ export default {
   transition: all 0.2s ease
 
 .container
-  max-width: 700px !important
+  max-width: 1165px
+
+  @media(max-width: 865px)
+    max-width: 100%
 
 img
   height: auto
@@ -60,8 +63,6 @@ img
 *
   box-sizing: border-box
 
-html
-  font-size: 62.5%
 body
   margin: 0
   padding: 0

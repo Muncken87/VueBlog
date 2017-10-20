@@ -4,8 +4,8 @@
       <h2>Alexander Munck</h2>
       <p>Front-end developer / Freelancer</p>
     </header>
-    <section>
-      <div v-for="(post, index) in posts">
+    <section class="m-fixer">
+      <div v-for="(post, index) in posts" :key="post.id">
         <app-post-list :post="post"></app-post-list>
       </div>
       <div class="clear"></div>
@@ -88,13 +88,24 @@ export default {
 .post-list
   transition: left 0.2s ease
 
+  .m-fixer
+    margin-left: -15px
+    margin-right: -15px
+    display: block
+    clear: both
+    overflow: hidden
+
+    @media(max-width: 865px)
+      margin: 0
+
   header
     width: 100%
-    margin-left: 10px
     margin-bottom: 4em
+    text-align: left
+    
     h2
       font-weight: bold
-      margin: 5em 0 0em 0
+      margin: 2em 0 0em 0
       font-size: 36px
 
     p

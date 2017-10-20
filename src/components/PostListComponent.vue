@@ -2,8 +2,8 @@
   <div>
     <router-link :to="'/post/'+ post['.key']">
       <div class="box" v-cloak>
-        <p>{{post.date}}</p>
-        <h4>{{post.title}}</h4>
+        <!-- <p>{{post.date}}</p>
+        <h4>{{post.title}}</h4> -->
         <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + post.image + ")", }'></div>
         <!-- <span  @click="removePost(post)">X</span> -->
         <div class="clear"></div>
@@ -45,27 +45,22 @@ export default {
 .box
   display: block
   float: left
-  width: 100%
-  margin: 10px
+  width: calc(25% - 30px)
   position: relative
-  border: 1px solid black
   background-color: #333
-  height: 60px
+  height: 165px
+  margin: 15px
+
+  @media(max-width: 865px)
+    width: calc(50% - 30px)
+
+  @media(max-width: 450px)
+   width: 100%
+   margin: 0 0 10px 0
 
   &:hover
     background-color: rgba(51, 125, 163, 0.79)
     cursor: pointer
-
-  @media(max-width: 1000px)
-    width: calc(50% - 20px)
-    margin: 10px
-
-
-  @media(max-width: 450px)
-    width: 100%
-    margin: 0 0 5px 0
-    &:hover
-      height: 100px
 
   .bg-image
     position: absolute
@@ -75,7 +70,7 @@ export default {
     height: 100%
     background-position: 0% 39%
     background-size: cover
-    opacity: 0.7
+    opacity: 1
 
   span
     color: red
