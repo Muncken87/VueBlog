@@ -9,6 +9,7 @@ import firebaseui from 'firebaseui'
 // import Firebase from 'firebase'
 import AboutComponent from './components/AboutComponent.vue'
 import PostComponent from '@/components/PostComponent.vue'
+// import SideBarComponent from '@/components/SideBarComponent.vue'
 
 
 Vue.use(VueFire)

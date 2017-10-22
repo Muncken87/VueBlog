@@ -1,15 +1,15 @@
 <template>
-  <div>
     <router-link :to="'/post/'+ post['.key']">
-      <div class="box" v-cloak>
-        <!-- <p>{{post.date}}</p>
-        <h4>{{post.title}}</h4> -->
-        <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + post.image + ")", }'></div>
+      <div class="box">
+        <div class="bg-image" :style='{ backgroundImage: "url(" + post.image + ")", }'v-if="post.image"></div>
         <!-- <span  @click="removePost(post)">X</span> -->
+        <div class="box-info">
+          <!-- <p>{{post.date}}</p> -->
+          <h4>{{post.title}}</h4>
+        </div>
         <div class="clear"></div>
       </div>
     </router-link>
-  </div>
 </template>
 <script>
 export default {
@@ -47,9 +47,7 @@ export default {
   float: left
   width: calc(25% - 30px)
   position: relative
-  background-color: #333
-  height: 165px
-  margin: 15px
+  margin: 30px 15px
 
   @media(max-width: 865px)
     width: calc(50% - 30px)
@@ -59,15 +57,12 @@ export default {
    margin: 0 0 10px 0
 
   &:hover
-    background-color: rgba(51, 125, 163, 0.79)
     cursor: pointer
 
   .bg-image
-    position: absolute
-    top: 0
-    left: 0
+    position: relative
     width: 100%
-    height: 100%
+    height: 165px
     background-position: 0% 39%
     background-size: cover
     opacity: 1
@@ -79,33 +74,31 @@ export default {
     background-color: white
     padding: 5px
 
-  p
-    font-family: hooge
-    font-size: 8px
-    color: white
-    // -webkit-text-stroke: 1px black
-    -webkit-font-smoothing: none
-    letter-spacing: 0.05em
-    margin: 0
-    position: absolute
-    z-index: 9999
-    left: 8%
-    top: 30%
-    text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
+  .box-info
+    position: relative
+    width: 100%
+    display: block
+    text-align: left
 
-  h4
-    font-family: hooge
-    font-size: 16px
-    color: white
-    // -webkit-text-stroke: 1px black
-    -webkit-font-smoothing: none
-    letter-spacing: 0.05em
-    margin: 0
-    position: absolute
-    z-index: 9999
-    left: 8%
-    top: 50%
-    text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
+    p
+      font-size: 8px
+      color: white
+      letter-spacing: 0.05em
+      margin: 0
+      position: absolute
+      z-index: 9999
+      left: 8%
+      top: 30%
+      // text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
+
+    h4
+      font-size: 14px
+      line-height: 1.875
+      font-weight: 300
+      color: #000
+      letter-spacing: 0.05em
+      margin: 0
+      // text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
 .clear
   &:after,&:before
     clear:  both
@@ -129,8 +122,5 @@ export default {
   .button-primary
     font-size: 11px
     margin-top: 20px
-
-[v-cloak]
-  display: none
 
 </style>

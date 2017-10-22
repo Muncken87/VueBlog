@@ -1,17 +1,12 @@
 <template>
   <nav class="sidebar">
-    <app-nav></app-nav>
+    
   </nav>
 </template>
 
 <script>
-
-import NavComponent from '@/components/NavComponent'
 export default {
   props: ['seen'],
-  components: {
-    appNav: NavComponent
-  },
   data () {
     return {
     }
@@ -23,10 +18,10 @@ export default {
 .sidebar
   position: fixed
   left: -250px
-  top: 0
+  top: 66px
   height: 100vh
   width: 250px
-  background-color: #fff
+  background-color: #000
   transition: left 0.2s ease
 
   p

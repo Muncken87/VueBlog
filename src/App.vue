@@ -1,11 +1,11 @@
 <template>
   <div id="app" v-bind:class="{ active: seen }">
-    <!-- <app-sidebar v-bind:class="{ move: seen }"></app-sidebar> -->
-    <!-- <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
+     <!-- <app-side-bar v-bind:class="{ move: seen }"></app-side-bar> 
+     <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
       <span>-</span>
       <span>-</span>
       <span>-</span>
-    </p> -->
+    </p>  -->
     <app-nav></app-nav>
     <div class="container text-center">
       <router-view></router-view>
@@ -16,12 +16,13 @@
 <script>
 
 // import PostComponent from './components/PostComponent'
-// // import SidebarComponent from './components/SidebarComponent'
+// import SideBarComponent from './components/SideBarComponent'
 import NavComponent from './components/NavComponent'
 
 export default {
   components: {
     appNav: NavComponent
+    // appSideBar: SideBarComponent
   },
   data () {
     return {
@@ -70,6 +71,7 @@ body
   font-size: 62.5%
   background-image: url("./assets/pattern.png")
   background-size: 15px
+  -webkit-font-smoothing: subpixel-antialiased
 
   .text-center
     text-align: center
@@ -77,15 +79,15 @@ body
 .click
   position: absolute
   background-color: white
-  padding: 10px 15px
   font-family: hooge
   font-size: 14px
   color: white
   text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black
-  left: 0px
-  top: 0
+  left: 1em
+  top: 18.5px
   transition: left 0.2s ease
   cursor: pointer
+  z-index: 9999
 
 .move
   left: 250px

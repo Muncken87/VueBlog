@@ -2,7 +2,7 @@
   <div class="post-detail-container">
     <h2 class="post-detail-title">{{title}}</h2>
     <p class="post-detail-date">{{date}}</p>
-    <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + image + ")", }'></div>
+    <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + image + ")", }' v-cloak></div>
     <p class="post-detail-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 </template>
@@ -25,6 +25,7 @@ created() {
        self.title = item.val().title;
        self.date = item.val().date;
        self.image = item.val().image;
+
      })
     //  console.log(this.$route.params.id);
 }
@@ -71,4 +72,11 @@ created() {
     word-wrap: break-word
     overflow-wrap: break-word
     line-break: strict
+
+[v-cloak]
+  display: none
+
+[v-cloak]
+  &:before 
+    content: "loading…" 
 </style>
