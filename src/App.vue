@@ -50,6 +50,13 @@ export default {
 #app
   transition: all 0.2s ease
 
+code
+  font-size: 16px
+  text-align: left
+
+pre
+  margin: 0
+
 .container
   max-width: 1165px
 
@@ -95,4 +102,6 @@ body
   padding-left: 250px
   transition: all 0.2s ease
   overflow: hidden
+
+
 </style>

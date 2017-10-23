@@ -9,7 +9,6 @@
 
 <script>
 var marked = require('marked');
-var markdownString = '```js\n console.log("hello"); \n```';
 export default {
   name: 'post-info-component',
   firebase: {

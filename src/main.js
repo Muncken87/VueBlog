@@ -5,14 +5,13 @@ import App from './App'
 import router from './router'
 require('../node_modules/skeleton-framework/dist/skeleton.min.css')
 var marked = require('marked');
-var highlight = require('highlight.js');
+require('../src/assets/highlight.css')
 import firebaseui from 'firebaseui'
 import VueFire from 'vuefire'
 import Firebase from 'firebase'
 import AboutComponent from './components/AboutComponent.vue'
 import PostComponent from '@/components/PostComponent.vue'
 // import SideBarComponent from '@/components/SideBarComponent.vue'
-
 
 Vue.use(VueFire)
 

@@ -26,12 +26,13 @@
 
 <script>
 var marked = require('marked');
-var highlight = require('highlight.js');
+var hljs = require('highlight.js');
 marked.setOptions({
   highlight: function (code) {
     return require('highlight.js').highlightAuto(code).value;
   }
 });
+hljs.initHighlightingOnLoad();
 var markdownString = '```js\n console.log("hello"); \n```';
 export default {
   firebase: {
@@ -82,8 +83,10 @@ form
   margin-top: 72px
   textarea
     max-width: 100%
+    width: 100%
+    resize: vertical
+    margin: 0
   .markdown
-    background: #eee
     min-height: 50vh
     p
       text-align: left
