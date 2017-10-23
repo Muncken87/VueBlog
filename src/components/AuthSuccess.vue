@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Signup succeeded</h1>
+    <h1>Signin succeeded</h1>
     <button @click="logOut">Log out</button>
     <hr>
     <img :src="photo" style="height: 120px"> <br>
@@ -30,7 +30,6 @@ export default {
     this.photo = this.user.photoURL;
     this.userId = this.user.uid;
   }
-  console.log(this.user);
 },
 methods: {
   logOut() {

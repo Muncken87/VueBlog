@@ -18,7 +18,6 @@
 // import PostComponent from './components/PostComponent'
 // import SideBarComponent from './components/SideBarComponent'
 import NavComponent from './components/NavComponent'
-
 export default {
   components: {
     appNav: NavComponent
