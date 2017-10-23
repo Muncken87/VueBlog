@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 require('../node_modules/skeleton-framework/dist/skeleton.min.css')
+var marked = require('marked');
+var highlight = require('highlight.js');
 import firebaseui from 'firebaseui'
 import VueFire from 'vuefire'
 import Firebase from 'firebase'

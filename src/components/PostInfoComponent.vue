@@ -3,32 +3,48 @@
     <h2 class="post-detail-title">{{title}}</h2>
     <p class="post-detail-date">{{date}}</p>
     <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + image + ")", }' v-cloak></div>
-    <p class="post-detail-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="post-detail-body" v-html="compiledMarkdown">{{text}}</p>
   </div>
 </template>
 
 <script>
+var marked = require('marked');
+var markdownString = '```js\n console.log("hello"); \n```';
 export default {
   name: 'post-info-component',
+  firebase: {
+    posts: postsRef
+  },
   data () {
     return {
       title: '',
       date: '',
-      image: ''
+      image: '',
+      text: ''
   }
 },
 created() {
-     let self = this;
-     var a = firebase.database().ref('/posts/' + this.$route.params.id).once('value')
-     .then (function(item){
+  let self = this;
+  var a = firebase.database().ref('/posts/' + this.$route.params.id).once('value')
+    .then (function(item){
       //  console.log(item.val());
-       self.title = item.val().title;
-       self.date = item.val().date;
-       self.image = item.val().image;
-
+      self.title = item.val().title;
+      self.text = item.val().text;
+      self.date = item.val().date;
+      self.image = item.val().image;
      })
     //  console.log(this.$route.params.id);
-}
+},
+  computed: {
+    compiledMarkdown: function() {
+      if (this.text == " " || this.text == null) {
+        console.log("No Markdown");
+      }
+      else {
+        return marked(this.text, { sanitize: true})
+      }
+    }
+  }
 }
 </script>
 

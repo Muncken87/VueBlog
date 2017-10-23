@@ -5,6 +5,7 @@ import AboutComponent from '@/components/AboutComponent.vue'
 import PostComponent from '@/components/PostComponent'
 import PostListComponent from '@/components/PostListComponent'
 import PostInfoComponent from '@/components/PostInfoComponent'
+import NewPostComponent from '@/components/NewPostComponent'
 import Auth from '@/components/Auth.vue'
 import AuthSuccess from '@/components/AuthSuccess'
 
@@ -28,6 +29,10 @@ export default new Router({
     {
       path: '/about',
       component: AboutComponent
+    },
+    {
+      path: '/new',
+      component: NewPostComponent
     },
     {
       path: '/posts',

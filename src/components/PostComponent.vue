@@ -11,34 +11,7 @@
           </div>
         </transition-group>
       </section>
-       <div class="clear"></div>
-      <!-- <form id="form" v-on:submit.prevent="addPost" v-if="hidden">
-      <div class="row">
-      <div class="four columns">
-      <label for="postTitle">Title</label>
-      <input type="text" class="u-full-width" id="postTitle" v-model="newPost.title">
-      </div>
-      <div class="four columns">
-      <label for="postDate">Date</label>
-      <input type="text" class="u-full-width" id="postDate" v-model="newPost.date">
-      </div>
-
-      <div class="four columns">
-      <label for="postImage">Image Url</label>
-      <input type="text" class="u-full-width" id="postImage" v-model="newPost.image">
-      </div>
-
-      <div class="twelve columns">
-      <label for="postImage">Text</label>
-      <textarea type="text" class="u-full-width" id="postText" v-model="newPost.text"></textarea>
-      </div>
-
-      <div class="one column">
-      <input type="submit" class="button-primary" value="Add Post">
-      </div>
-      </div>
-      </form>
-      <input type="submit" class="hide" value="Hide Form" @click="hidden = !hidden"> -->
+      <div class="clear"></div>
   </div>
 </template>
 
@@ -55,31 +28,10 @@ export default {
   },
   data () {
     return {
-      newPost: {
-        date: '',
-        image: 'http://',
-        title: '',
-        text: '',
-        id: ''
-      },
       hidden: false,
       selected: [],
     }
   },
-  methods: {
-  addPost: function () {
-     postsRef.push(this.newPost);
-     this.newPost.title = '';
-     this.newPost.date = '';
-     this.newPost.image = 'http://';
-     this.newPost.text = '';
-     this.newPost.id = '';
-     this.seen = false;
-   },
-   removePost: function (post) {
-      postsRef.child(post['.key']).remove()
-   }
- },
  created(){
   //  console.log(this.firebase);
  }
