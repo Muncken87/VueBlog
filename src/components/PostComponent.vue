@@ -6,7 +6,7 @@
     </header>
       <section class="m-fixer">
         <transition-group name="fade" tag="div">
-          <div v-for="(post, index) in posts" :key="post.id">
+          <div v-for="(post, index) in posts" v-bind:key="post['.key']">
            <app-post-list :post="post"></app-post-list>
           </div>
         </transition-group>
@@ -57,11 +57,12 @@ export default {
     width: 100%
     margin-bottom: 4em
     text-align: left
-    
+
     h2
       font-weight: bold
       margin: 2em 0 0em 0
       font-size: 36px
+      color: #ffc85e
 
     p
       font-weight: 100
@@ -73,15 +74,15 @@ export default {
   font-size: 8px
   height: 38px
 
-.fade-enter-active, .fade-leave-active 
+.fade-enter-active, .fade-leave-active
   transition-property: opacity
   transition-duration: .25s
 
 
-.fade-enter-active 
+.fade-enter-active
 
 
-.fade-enter, .fade-leave-active 
+.fade-enter, .fade-leave-active
   opacity: 0
 </style>
 

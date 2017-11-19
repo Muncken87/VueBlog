@@ -1,6 +1,6 @@
 <template>
   <div id="app" v-bind:class="{ active: seen }">
-     <!-- <app-side-bar v-bind:class="{ move: seen }"></app-side-bar> 
+     <!-- <app-side-bar v-bind:class="{ move: seen }"></app-side-bar>
      <p class="click" @click="seen = !seen" v-bind:class="{ move: seen }">
       <span>-</span>
       <span>-</span>
@@ -27,15 +27,15 @@ export default {
     return {
       seen: false
     }
-  },
-  created() {
-    firebase.auth().onAuthStateChanged((user) => {
-    if(user) {
-      this.$router.push('/success')
-    } else {
-      this.$router.push('/auth')
-    }
-   });
+  // },
+  // created() {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //   if(user) {
+  //     this.$router.push('/success')
+  //   } else {
+  //     this.$router.push('/auth')
+  //   }
+  //  });
   }
 }
 </script>
@@ -73,7 +73,8 @@ img
 body
   margin: 0
   padding: 0
-  font-family: 'Raleway', sans-serif
+  // font-family: 'Raleway', sans-serif
+  font-family: 'Roboto', sans-serif
   font-size: 62.5%
   background-image: url("./assets/pattern.png")
   background-size: 15px

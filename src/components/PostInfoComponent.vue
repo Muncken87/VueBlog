@@ -4,6 +4,7 @@
     <p class="post-detail-date">{{date}}</p>
     <div class="bg-image" v-bind:style='{ backgroundImage: "url(" + image + ")", }' v-cloak></div>
     <p class="post-detail-body" v-html="compiledMarkdown">{{text}}</p>
+    <button @click="removePost()">Delete Post</button>
   </div>
 </template>
 
@@ -19,14 +20,15 @@ export default {
       title: '',
       date: '',
       image: '',
-      text: ''
-  }
+      text: '',
+      image: '',
+    }
 },
 created() {
   let self = this;
   var a = firebase.database().ref('/posts/' + this.$route.params.id).once('value')
     .then (function(item){
-      //  console.log(item.val());
+       // console.log(item.val());
       self.title = item.val().title;
       self.text = item.val().text;
       self.date = item.val().date;
@@ -42,6 +44,11 @@ created() {
       else {
         return marked(this.text, { sanitize: true})
       }
+    }
+  },
+  methods: {
+    removePost(){
+      console.log(this.$route.params);
     }
   }
 }
@@ -92,6 +99,10 @@ created() {
   display: none
 
 [v-cloak]
-  &:before 
-    content: "loading…" 
+  &:before
+    content: "loading…"
+
+input
+  width: 100%
+  padding: 12px 24px
 </style>

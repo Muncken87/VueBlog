@@ -63,7 +63,7 @@ export default {
     position: relative
     width: 100%
     height: 165px
-    background-position: 0% 39%
+    background-position: 50% 50%
     background-size: cover
     opacity: 1
 

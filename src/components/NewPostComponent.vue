@@ -4,15 +4,43 @@
   <div class="row">
 
     <div class="six columns">
-      <input type="text" class="u-full-width" placeholder="Title" id="postTitle" v-model="newPost.title">
+      <input
+       type="text"
+       class="u-full-width"
+       placeholder="Title"
+       id="postTitle"
+       v-model="newPost.title"
+      >
+      
+      <input
+       type="text"
+       class="u-full-width"
+       placeholder="Date" id="
+       postDate" v-model="newPost.date"
+      >
 
-      <input type="text" class="u-full-width" placeholder="Date" id="postDate" v-model="newPost.date">
+      <input
+       type="text"
+       class="u-full-width"
+       placeholder="Image Url"
+       id="postImage"
+       v-model="newPost.image"
+      >
 
-      <input type="text" class="u-full-width" placeholder="Image Url" id="postImage" v-model="newPost.image">
+      <textarea
+        type="text"
+        class="u-full-width"
+        placeholder="Content"
+        id="postText"
+        v-model="newPost.text"
+        @input="update">
+      </textarea>
 
-      <textarea  type="text" class="u-full-width" placeholder="Content" id="postText" v-model="newPost.text" @input="update"></textarea>    
-
-      <input type="submit" class="button-primary" value="Add Post">
+      <input
+       type="submit"
+       class="button-primary"
+       value="Add Post"
+      >
     </div>
 
     <div class="six columns">
@@ -46,7 +74,7 @@ export default {
       title: '',
       text: '',
       id: ''
-      } 
+      }
     }
   },
   methods: {

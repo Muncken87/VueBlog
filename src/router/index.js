@@ -6,22 +6,22 @@ import PostComponent from '@/components/PostComponent'
 import PostListComponent from '@/components/PostListComponent'
 import PostInfoComponent from '@/components/PostInfoComponent'
 import NewPostComponent from '@/components/NewPostComponent'
-import Auth from '@/components/Auth.vue'
-import AuthSuccess from '@/components/AuthSuccess'
+// import Auth from '@/components/Auth.vue'
+// import AuthSuccess from '@/components/AuthSuccess'
 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/auth',
-      component: Auth
-    },
-    {
-      path: '/success',
-      component: AuthSuccess
-    },
+    // {
+    //   path: '/auth',
+    //   component: Auth
+    // },
+    // {
+    //   path: '/success',
+    //   component: AuthSuccess
+    // },
     {
       path: '/',
       component: PostComponent
