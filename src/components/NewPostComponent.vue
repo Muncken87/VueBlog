@@ -54,13 +54,6 @@
 
 <script>
 var marked = require('marked');
-var hljs = require('highlight.js');
-marked.setOptions({
-  highlight: function (code) {
-    return require('highlight.js').highlightAuto(code).value;
-  }
-});
-hljs.initHighlightingOnLoad();
 var markdownString = '```js\n console.log("hello"); \n```';
 export default {
   firebase: {
@@ -99,9 +92,6 @@ export default {
      return marked(this.newPost.text, { sanitize: true})
    }
  },
- created() {
-  hljs.initHighlightingOnLoad();
- }
 }
 
 </script>
