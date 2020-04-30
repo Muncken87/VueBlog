@@ -5,24 +5,21 @@
       <p>Front-end developer / Freelancer</p>
     </header>
       <section class="m-fixer">
-        <transition-group name="fade" tag="div">
+        <!-- <transition-group name="fade" tag="div"> -->
           <div v-for="(post, index) in posts" v-bind:key="post['.key']">
            <app-post-list :post="post"></app-post-list>
           </div>
-        </transition-group>
+        <!-- </transition-group> -->
       </section>
       <div class="clear"></div>
   </div>
 </template>
 
 <script>
-import PostListComponent from '@/components/PostListComponent'
+import PostListComponent from './PostListComponent'
 
 export default {
   name: 'home',
-  firebase: {
-    posts: postsRef
-  },
   components: {
     appPostList: PostListComponent
   },
@@ -30,10 +27,23 @@ export default {
     return {
       hidden: false,
       selected: [],
+        posts: [
+  { title: '2017-09-24',
+   image: 'https://github.com/Muncken87/Modal/blob/master/app/assets/images/p1.png?raw=true',
+   description: 'Vue.js Filters'},
+  { title: '2017-03-12',
+   image: 'https://github.com/Muncken87/Modal/blob/master/app/assets/images/p2.jpg?raw=true',
+   description: 'Angular 4 Types'},
+  { title: '2017-04-01',
+   image: 'https://raw.githubusercontent.com/Muncken87/Modal/master/app/assets/images/p3.jpg',
+   description: 'Responsive Design'},
+  { title: '2017-12-24',
+   image: 'https://68.media.tumblr.com/72507162d00d478427e09cf3cbe6ce65/tumblr_nhla1bRknd1so3sado1_r1_500.gif',  description: 'Sass Mixins'},
+],
     }
   },
  created(){
-  //  console.log(this.firebase);
+  //  console.log(this.posts);
  }
 }
 </script>

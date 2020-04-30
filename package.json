@@ -11,9 +11,13 @@
   },
   "dependencies": {
     "child_process": "^1.0.2",
+    "firebase": "^7.14.2",
+    "firebaseui": "^4.5.0",
+    "highlight.js": "^10.0.1",
     "marked": "^0.3.6",
     "vue": "^2.4.2",
-    "vue-router": "^2.7.0"
+    "vue-router": "^2.7.0",
+    "vuefire": "^2.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
