@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 require('../node_modules/skeleton-framework/dist/skeleton.min.css')
 var marked = require('marked');
-require('../src/assets/highlight.css')
 // import firebaseui from 'firebaseui'
 // import VueFire from 'vuefire'
 // import Firebase from 'firebase'
